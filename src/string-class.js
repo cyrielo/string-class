@@ -21,3 +21,8 @@ String.prototype.ucFirst = function () {
     return match.toUpper();
   });
 };
+
+String.prototype.isQuestion = function () {
+  var regex = /[?]$/g;
+  return regex.test(this);
+};
