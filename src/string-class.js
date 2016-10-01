@@ -39,3 +39,7 @@ String.prototype.wordCount = function () {
 String.prototype.toCurrency = function () {
   return this.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
 };
+
+String.prototype.fromCurrency = function () {
+  return Number(this.replace(/[,]/g, ''));
+};
