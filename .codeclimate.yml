@@ -1,0 +1,19 @@
+engine:
+  eslint:
+    enabled: true
+  csslint:
+    enabled: true
+exclude_paths:
+  - jasmine/lib
+
+ratings:
+  paths:
+  - src/**
+  - spec/**
+
+duplication:
+  enabled: true
+
+env:
+  browser: true
+  es6: true
