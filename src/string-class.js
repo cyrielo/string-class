@@ -15,3 +15,9 @@ String.prototype.toLower = function () {
     return String.fromCharCode(this.charCodeAt(pos) + 32);
   });
 };
+
+String.prototype.ucFirst = function () {
+  return this.replace(/^\S/, function (match) {
+    return match.toUpper();
+  });
+};
