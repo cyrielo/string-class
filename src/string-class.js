@@ -26,3 +26,9 @@ String.prototype.isQuestion = function () {
   var regex = /[?]$/g;
   return regex.test(this);
 };
+
+String.prototype.words = function () {
+  var regex = /\w+/g;
+  return this.match(regex);
+};
+
