@@ -135,3 +135,7 @@ String.prototype.numberWords = function () {
 
   return str;
 };
+
+String.prototype.isDigit = function () {
+  return this.match(/\d/g).length === 1;
+};
