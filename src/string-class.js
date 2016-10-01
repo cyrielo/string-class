@@ -32,3 +32,6 @@ String.prototype.words = function () {
   return this.match(regex);
 };
 
+String.prototype.wordCount = function () {
+  return this.words().length;
+};
