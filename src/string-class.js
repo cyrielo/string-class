@@ -71,3 +71,23 @@ String.prototype.alternatingCase = function () {
 
   return inverseString;
 };
+
+String.prototype.getMiddle = function () {
+  var
+    strLen = this.length,
+    isOdd = ((strLen % 2) == 1),
+    halfed = Math.floor(strLen / 2),
+    strArray = this.split(''),
+    middleCharacter;
+
+  if (!isOdd) {
+    halfed = halfed - 1;
+  }
+
+  strArray.splice(-halfed, halfed);
+  strArray.splice(0, halfed);
+  middleCharacter = strArray.toString().replace(/,/g, '');
+
+  return middleCharacter;
+
+};
