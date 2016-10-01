@@ -9,3 +9,9 @@ String.prototype.toUpper = function () {
     return String.fromCharCode(this.charCodeAt(pos) - 32);
   });
 };
+
+String.prototype.toLower = function () {
+  return this.replace(/[A-Z]/g, (match, pos) => {
+    return String.fromCharCode(this.charCodeAt(pos) + 32);
+  });
+};
