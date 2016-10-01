@@ -55,3 +55,19 @@ String.prototype.inverseCase = function () {
   });
 
 };
+
+String.prototype.alternatingCase = function () {
+  var
+    inverseString = '',
+    x,
+    strLen = this.length;
+  for (x = 0; x < strLen; x += 1) {
+    if (x % 2 == 0) {
+      inverseString += this[x].toLower();
+    }else {
+      inverseString += this[x].toUpper();
+    }
+  }
+
+  return inverseString;
+};
