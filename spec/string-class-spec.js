@@ -3,11 +3,7 @@
  */
 'use strict';
 describe('General test for String class',  () => {
-  let str;
-
-  beforeEach(() => {
-    str = 'Hello world';
-  });
+  let str = 'Hello world';
 
   describe('Tests for hasVowels method', () => {
 
@@ -170,8 +166,7 @@ describe('General test for String class',  () => {
   });
 
   describe('Tests for isDigit method', () => {
-    let
-      correctDigit = '8',
+    let correctDigit = '8',
       wrongDigit = '91';
 
     it('should expect string.isDigit to be defined', () => {

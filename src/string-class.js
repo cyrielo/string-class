@@ -1,6 +1,6 @@
 'use strict';
 String.prototype.hasVowels = function () {
-  var regex = /[aeiou]/ig;
+  let regex = /[aeiou]/ig;
   return regex.test(this);
 };
 
@@ -23,12 +23,12 @@ String.prototype.ucFirst = function () {
 };
 
 String.prototype.isQuestion = function () {
-  var regex = /[?]$/g;
+  let regex = /[?]$/g;
   return regex.test(this);
 };
 
 String.prototype.words = function () {
-  var regex = /\w+/g;
+  let regex = /\w+/g;
   return this.match(regex);
 };
 
@@ -57,8 +57,7 @@ String.prototype.inverseCase = function () {
 };
 
 String.prototype.alternatingCase = function () {
-  var
-    inverseString = '',
+  let  inverseString = '',
     x,
     strLen = this.length;
   for (x = 0; x < strLen; x += 1) {
@@ -73,7 +72,7 @@ String.prototype.alternatingCase = function () {
 };
 
 String.prototype.getMiddle = function () {
-  var
+  let
     strLen = this.length,
     isOdd = ((strLen % 2) == 1),
     halfed = Math.floor(strLen / 2),
