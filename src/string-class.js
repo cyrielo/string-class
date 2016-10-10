@@ -37,11 +37,13 @@ String.prototype.wordCount = function () {
 };
 
 String.prototype.toCurrency = function () {
-  return this.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+  return (isNaN(Number(this))) ? 'You need to enter a number' :
+    this.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
 };
 
 String.prototype.fromCurrency = function () {
-  return Number(this.replace(/[,]/g, ''));
+  return (isNaN(this))? 'You need to enter a number' :
+    Number(this.replace(/[,]/g, ''));
 };
 
 String.prototype.inverseCase = function () {
