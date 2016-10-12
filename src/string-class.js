@@ -37,13 +37,18 @@ String.prototype.wordCount = function () {
 };
 
 String.prototype.toCurrency = function () {
-  return (isNaN(Number(this))) ? 'You need to enter a number' :
-    this.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+  let regex = /(\d)(?=(\d{3})+(?!\d))/g;
+  if(!isNaN(Number(this))){
+    return this.replace(regex, '$1,');
+  }
+  throw new Error('Expected string to be a number literal');
 };
 
 String.prototype.fromCurrency = function () {
-  return (isNaN(this))? 'You need to enter a number' :
-    Number(this.replace(/[,]/g, ''));
+  if(/\d/g.test(this)){
+    return parseFloat(this.replace(/[,]/g, ''));
+  }
+  throw new Error('Expected string to be a comma separated number');
 };
 
 String.prototype.inverseCase = function () {
@@ -94,7 +99,10 @@ String.prototype.getMiddle = function () {
 };
 
 String.prototype.numberWords = function () {
-  let word, str = '', char;
+  let regex = /\d/g, word, str = '', char;
+  if(this.match(regex) == null)
+    throw new Error('Expected string to be number literals');
+
   for (char = 0; char < this.length; char++) {
     switch (this[char]){
       case '1':
@@ -138,7 +146,11 @@ String.prototype.numberWords = function () {
 };
 
 String.prototype.isDigit = function () {
-  return this.match(/\d/g).length === 1;
+  let match = this.match(/\d/g);
+  if(!isNaN(Number(this))){
+    return match.length === 1;
+  }
+  throw new Error('You need to enter a number');
 };
 
 String.prototype.doubleCheck = function () {
