@@ -154,5 +154,5 @@ String.prototype.isDigit = function () {
 };
 
 String.prototype.doubleCheck = function () {
-  return /(\S)\1/g.test(this);
+  return /(\w|\s|\S)\1/g.test(this);
 };
